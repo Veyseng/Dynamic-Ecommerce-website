@@ -1,8 +1,3 @@
 # Dynamic-Ecommerce-website
 
-Front-end
-Dashboard for admin
-Home page for all
-
-
-Back-end
+A fullstack website with nodejs, expressjs and mongoose
