@@ -18,70 +18,26 @@
 <body id="page-top">
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top align-content-center" id="mainNav">
-		<a class="navbar-brand align-content-center" href="#page-top"> Awesome <span class="shop">Shop</span> </a>
+		<a class="navbar-brand align-content-center" href="#page-top"> Awesome <span class="shop">Shop </span><span class="border-right"> </span>  Admin pannel </a>
+    
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse " id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item align-content-center">
-					<a class="nav-link js-scroll-trigger" href=""><i class="fas fa-question-circle"></i> Need Help</a>
+					<a class="nav-link js-scroll-trigger border-right" href="">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/users/register">Join us</a>
+					<a class="nav-link js-scroll-trigger" href="/users/logout">Log out</a>
 				</li>
 			</ul>
 		</div>
 	</nav>
-	<!-- Main billboard about the promotion -->
-	<header class="main-billboard align-item-center text-black-50">
-		<div class="contaner">
-			<div class="row ">
-				<div class="container sub-billboard col-sm-15  text-md-center  text-center">
-					<h1 class="h1-billboard">Shop your designer dresses</h1>
-					<p class="lead">Ready to wear dresses tailored for you from online. Hurry up while in stock lasts</p>
-					<div class="form-group has-search">
-						<span class="fa fa-search form-control-feedback"></span>
-						<input type="text" class="form-control" placeholder="Search">
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-	<div class="container promotion">
-		<div class="card-deck mb-3 text-center">
-			<div class="card mb-4 shadow-sm">
-				<div class="card-body coupon-saving">
-					<ul class="list-unstyled mt-3 mb-2 text-light text-left">
-						<li><h5>Coupon Saving</h5></li>
-						<li><P>Up to 50% off </P></li>
-						<button type="button" class="btn bg-light">Shop Coupon</button>
-					</ul>
-				</div>
-			</div>
-			<div class="card mb-4 shadow-sm">
-				<div class="card-body delivery">
-					<ul class="list-unstyled mt-3 mb-2 text-light text-left">
-						<li><h5>Coupon Saving</h5></li>
-						<li><P>Up to 50% off </P></li>
-						<button type="button" class="btn bg-light">Deliver Now</button>
-					</ul>
-				</div>
-			</div>
-			<div class="card mb-4 shadow-sm">
-				<div class="card-body gift">
-					<ul class="list-unstyled mt-3 mb-2 text-light text-left">
-						<li><h5>Coupon Saving</h5></li>
-						<li><P>Up to 50% off </P></li>
-						<button type="button" class="btn bg-light">Gift Now</button>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row">
+	
+	<div class="row" style="padding-top: 10%;">
 		<div class="container">
-
+      
 		</div>
 	</div>
 	<!-- Menu -->
@@ -89,16 +45,79 @@
 		<div class="row content">
 			<div class="col-sm-3 sidenav ">
 				<nav class="nav flex-column">
-					<a class="nav-link " href="#">Electronic</a>
-					<a class="nav-link " href="#">Hand bag</a>
-					<a class="nav-link " href="#">wallet</a>
-					<a class="nav-link " href="#">clothes</a>
+					<a class="nav-link " href="#">Product</a>
+					<a class="nav-link " href="#">Name</a>
+					<a class="nav-link " href="#">Purchase</a>
+					<a class="nav-link " href="#">History</a>
 				</nav>
 			</div>
 			<!-- Product -->
 			<div class="col-sm-9">
 				<div class="container">
-					Hello
+					<h1 class="h4 text-left"style="display: inline-block;">All products in stock</h1>
+					<a class="text-left">Add Product</a>
+          <div class="table-responsive">
+            <table class="table table-striped align-content-center">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col ">
+                    <div class="dropdown">
+                      <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Type
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                    </div>
+                  </th>
+                  <th scope="col">details</th>
+                  <th scope="col">Instock at</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>22nd, Oct 2021</td>
+                  <td>
+                    <a class="text-black-50" href=""><i class="far fa-edit"></i></a>
+                    <a class="text-black-50" href=""><i class="far fa-trash-alt"></i></a>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>22nd, Oct 2021</td>
+                  <td>
+                    <a class="text-black-50" href=""><i class="far fa-edit"></i></a>
+                    <a href=""><i class="far fa-trash-alt"></i></a>
+                  </td>
+                </tr>
+                
+                <tr class=" justify-content-center align-content-center">
+                  <th scope="row"><img class="item-image align-content-center" src="./assets/images/checked-truck.png" alt=""></th>
+                  <td class="align-content-center">clothes</td>
+                  <td class="align-content-center">Otto</td>
+                  <td>@mdo</td>
+                  <td>22nd, Oct 2021</td>
+                  <td>
+                    <a class="text-black-50" href=""><i class="far fa-edit"></i></a>
+                    <a href=""><i class="far fa-trash-alt"></i></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 				</div>
 			</div>
 		</div>

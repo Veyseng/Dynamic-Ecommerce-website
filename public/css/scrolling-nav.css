@@ -112,3 +112,7 @@ section {
     background-color: #00B140;
     color: white;
   }
+  
+.item-image{
+  width: 5rem;
+}
