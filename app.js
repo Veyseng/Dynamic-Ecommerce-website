@@ -6,7 +6,8 @@ const session = require('express-session');
 const morgan = require('morgan');
 const path = require('path');
 const logger = require('./middlewares/logger');
-
+const fileUpload = require('express-fileupload');
+const bodyParser = require('body-parser');
 const app = express();
 
 //Allow app to use public folder
@@ -30,14 +31,29 @@ mongoose
 
   // EJS
 app.set('view engine', 'ejs');
+app.set('views', 'views');
 app.set('views',path.resolve(__dirname,'views/'));
+
+//Limite the file uploading 
+app.use(fileUpload({
+  limits: { fileSize: 20* 1024 * 1024}
+}));
 
 // Express body parser
 app.use(express.urlencoded({ extended: true }));
+app,use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
 
 // Express session
 app.use(
   session({
+    cookie:{
+      path:'/',
+      httpOnly:true,
+      sameSite:true,
+      maxAge:2000*60*60,
+      secure:false
+    },
     secret: 'secret',
     resave: true,
     saveUninitialized: true

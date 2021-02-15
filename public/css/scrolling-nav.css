@@ -97,22 +97,22 @@ section {
       height: 2.375rem;
       line-height: 2.375rem;
       text-align: center;
-      pointer-events: none;
-      color: #aaa;
-  }
-  .row{
-    margin-left: 0%;
-    margin-right: 0%;
-  } 
-  a.nav-link{
-    color: #00B140;
-  }
-  a.nav-link :hover,
-  a.nav-link :active{
-    background-color: #00B140;
-    color: white;
-  }
-  
+    pointer-events: none;
+    color: #aaa;
+}
+.row{
+  margin-left: 0%;
+  margin-right: 0%;
+} 
+a.nav-link{
+  color: #00B140;
+}
+a.nav-link :hover,
+a.nav-link :active{
+  background-color: #00B140;
+  color: white;
+}
+
 .item-image{
   width: 5rem;
 }
