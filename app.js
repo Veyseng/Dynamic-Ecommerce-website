@@ -3,12 +3,15 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
+const morgan = require('morgan');
+const path = require('path')
 
 const app = express();
 
-
+//Allow app to use public folder
 app.use(express.static("public"));
-
+//log request
+app.use(morgan('tiny'));
 // Passport Config
 require('./config/passport')(passport);
 
@@ -24,8 +27,9 @@ mongoose
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
-// EJS
+  // EJS
 app.set('view engine', 'ejs');
+app.set('views',path.resolve(__dirname,'views/'));
 
 // Express body parser
 app.use(express.urlencoded({ extended: true }));
@@ -56,6 +60,7 @@ app.use(function(req, res, next) {
 
 // Routes
 app.use('/', require('./routes/index.js'));
+app.use('/home', require('./routes/index.js'));
 app.use('/users', require('./routes/users.js'));
 
 const PORT = process.env.PORT || 4000;

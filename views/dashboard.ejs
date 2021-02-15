@@ -18,12 +18,12 @@
 <body id="page-top">
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top align-content-center" id="mainNav">
-		<a class="navbar-brand align-content-center" href="#page-top"> Awesome <span class="shop">Shop </span><span class="border-right"> </span>  Admin pannel </a>
-    
+		
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse " id="navbarResponsive">
+			<a class="navbar-brand align-content-center" href="#page-top"> Awesome <span class="shop">Shop </span> | Admin Panel</a>
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item align-content-center">
 					<a class="nav-link js-scroll-trigger border-right" href="">Home</a>
@@ -35,9 +35,8 @@
 		</div>
 	</nav>
 	
-	<div class="row" style="padding-top: 10%;">
+	<div class="row" style="display: block; padding-top: 10%;">
 		<div class="container">
-      
 		</div>
 	</div>
 	<!-- Menu -->
@@ -45,10 +44,10 @@
 		<div class="row content">
 			<div class="col-sm-3 sidenav ">
 				<nav class="nav flex-column">
-					<a class="nav-link " href="#">Product</a>
-					<a class="nav-link " href="#">Name</a>
-					<a class="nav-link " href="#">Purchase</a>
-					<a class="nav-link " href="#">History</a>
+					<a class="nav-link" href="#">Product</a>
+					<a class="nav-link" href="#">Name</a>
+					<a class="nav-link" href="#">Purchase</a>
+					<a class="nav-link" href="#">History</a>
 				</nav>
 			</div>
 			<!-- Product -->
@@ -57,10 +56,11 @@
 					<h1 class="h4 text-left"style="display: inline-block;">All products in stock</h1>
 					<a class="text-left">Add Product</a>
           <div class="table-responsive">
-            <table class="table table-striped align-content-center">
+			<input class="form-control" id="mySearchInput" type="text" placeholder="Search..">
+            <table class="table table-striped align-content-center" id="myTable">
               <thead>
                 <tr>
-                  <th scope="col">#</th>
+                  <th scope="col"></th>
                   <th scope="col">Name</th>
                   <th scope="col ">
                     <div class="dropdown">
@@ -68,47 +68,26 @@
                         Type
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="#">Electronic</a>
+                        <a class="dropdown-item" href="#">Hand Bag</a>
+                        <a class="dropdown-item" href="#">Wallet</a>
+						<a class="dropdown-item" href="#">Clothes</a>
                       </div>
                     </div>
                   </th>
-                  <th scope="col">details</th>
+				  <th scope="col">Qty</th>
+                  <th scope="col"></th>
                   <th scope="col">Instock at</th>
                   <th scope="col">Action</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>22nd, Oct 2021</td>
-                  <td>
-                    <a class="text-black-50" href=""><i class="far fa-edit"></i></a>
-                    <a class="text-black-50" href=""><i class="far fa-trash-alt"></i></a>
-                  </td>
-                </tr>
-                
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>22nd, Oct 2021</td>
-                  <td>
-                    <a class="text-black-50" href=""><i class="far fa-edit"></i></a>
-                    <a href=""><i class="far fa-trash-alt"></i></a>
-                  </td>
-                </tr>
-                
                 <tr class=" justify-content-center align-content-center">
                   <th scope="row"><img class="item-image align-content-center" src="./assets/images/checked-truck.png" alt=""></th>
                   <td class="align-content-center">clothes</td>
                   <td class="align-content-center">Otto</td>
                   <td>@mdo</td>
+				  <td>Latop computer</td>
                   <td>22nd, Oct 2021</td>
                   <td>
                     <a class="text-black-50" href=""><i class="far fa-edit"></i></a>
@@ -122,19 +101,16 @@
 			</div>
 		</div>
 	</div>
-	<!-- Page navigation -->
-	<nav aria-label="Page navigation" >
-		<ul class="pagination justify-content-end">
-			<li class="page-item"><a class="page-link" href="#">Previous</a></li>
-			<li class="page-item"><a class="page-link" href="#">1</a></li>
-			<li class="page-item"><a class="page-link" href="#">Next</a></li>
-		</ul>
-	</nav>
+	
+	<div class="row" style="display: block; padding-top: 30%;">
+		<div class="container">
+		</div>
+	</div>
 	<!-- Footer -->
 	<footer class="py-5 bg-dark">
 		<p class="m-0 text-center text-white">Copyright &copy; Awesome Shop 2021</p>
 	</footer>
-
+		
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
