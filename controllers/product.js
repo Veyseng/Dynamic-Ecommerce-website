@@ -1,86 +1,44 @@
-const Product= require('../models/products')
-const fs = require('fs');
-
-
-// exports.dashboard= (req,res) =>{
-//     res.render('dashboard',{result:result});
-// }
-exports.getAllProduct=async(req,res)=>{
-    await Product.find().then(result=>{
-        if(result){
-            res.render('dashboard',{error:false,result:result});
-        }
-        else{
-            res.render('dashboard',{error:false,result:false});
-        }
-    })
-}
-exports.displayClothes=async(req,res)=>{
-    await Product.findById(req.params.id).then(result=>{
-        if(result){
-            res.render('clothes',{error:false,result:result});
-        }
-        else{
-            res.render('clothes',{error:false,result:false});
-        }
-    })
-}
-exports.admin=async(req,res)=>{
-    await Product.find().then(result=>{
-        if(result){
-            console.log(result);
-            res.render('admin',{error:false,result:result});
-
-        }else{
-            res.render('admin',{error:false,result:false});
-        }
-    })
-    
-}
-exports.createProduct=(req,res)=>{
-    // console.log(req.body)
-    // console.log(req.files)
-    const file = req.files.img;
-    // console.log(file);
-    const path = "./publics/assets/storage/";
-    const savepath = "/assets/storage/"+file.name;
-    if(!fs.existsSync(path))fs.mkdirSync(path);
-    dir = path+file.name;
-    Product.findOne({productname:req.body.productname}).then(result=>{
-        if(result){
-            result.qty=req.body.qty;
-            result.save().then(result=>res.redirect('/admin'))
-            .catch(err=>res.redirect('/admin'));
-        }else{
-            file.mv(dir).then(result=>{
-                const product = new Product({
-                    img:savepath,
-                    productname:req.body.productname,
-                    qty:req.body.qty,
-                    price:req.body.price,
-                    detail:req.body.detail,
-                    importDate:req.body.importDate,
-                    category:req.body.category,
-                })
-                product.save().then(
-                result=>{
-                    res.redirect("/admin")
-                }).catch(err=>{
-                    console.log(err)
-                    res.redirect("/admin")
-                })
-            })
-        }
-    })
+const product = require('../models/product');
+// desc Get all products
+// @route GET /api/v1/products
+// @access Public
+exports.getProducts = (req, res, next) => {
+	res.status(200).json({success : true, msg : "show all products"})
 }
 
-exports.deleteProduct = (req,res)=>{
-    const path="./publics"
-    console.log(req.params.id)
-    Product.findByIdAndRemove(req.params.id).then(result=>{
-        fs.unlink(path+result.img);
-        res.redirect("/admin")
-    }).catch(err=>{
-        res.redirect("/admin")
-    })
+// desc Get all products
+// @route GET /api/v1/products
+// @access Public
+exports.getProduct = (req, res, next) => {
+	res.status(200).json({success : true, msg : "show a product"})
+}
+// desc Update all 
+// @route POST /api/v1/products
+// @access Private
+exports.updateProduct = (req, res, next) => {
+	res.status(200).json({success : true, msg : "update a product"})
+}
+
+// desc Update new product
+// @route PUT /api/v1/products
+// @access Private
+exports.createProduct = async (req, res, next) => {
+	try{
+		const product = await product.create(req.body);
+		res.status(201).json({
+			success : true,
+			data : product
+		})
+	}catch(err){
+		res.status(400).json({
+			sucess: false
+		})
+	}	
+}
+
+// desc Delete new product
+// @route DELETE /api/v1/products
+// @access Private
+exports.deleteProduct = (req, res, next) => {
+	res.status(200).json({success : true, msg : "delete a product"})
 }

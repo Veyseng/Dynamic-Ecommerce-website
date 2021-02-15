@@ -4,7 +4,8 @@ const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
 const morgan = require('morgan');
-const path = require('path')
+const path = require('path');
+const logger = require('./middlewares/logger');
 
 const app = express();
 
@@ -62,6 +63,13 @@ app.use(function(req, res, next) {
 app.use('/', require('./routes/index.js'));
 app.use('/home', require('./routes/index.js'));
 app.use('/users', require('./routes/users.js'));
+const products = require(`./routes/products`);
+
+//Use logger
+app.use(logger);
+
+//mount routers
+app.use('/api/v1/products',products);
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, console.log(`Running on port ${PORT}`));
